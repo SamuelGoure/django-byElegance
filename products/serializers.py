@@ -2,6 +2,12 @@ from rest_framework import serializers
 from .models import Product
 
 class ProductSerializer(serializers.ModelSerializer):
+    """
+    Représentation d'un produit vendable.
+    - name: nom commercial
+    - price: prix TTC en euros (doit être > 0)
+    - created_at: horodatage de création (lecture seule)
+    """
     class Meta:
         model = Product
         fields = "__all__"
